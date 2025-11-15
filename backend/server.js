@@ -1,8 +1,9 @@
 import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
-import 'dotenv/config'
-import { connectDB } from "./config/db.js"
+import dotenv from "dotenv"
+dotenv.config();
+
 import foodRoutes from "./routes/foodRoutes.js"
 import userRouter from "./routes/userRoutes.js"
 import cartRouter from "./routes/cartRoutes.js"
@@ -28,14 +29,11 @@ app.use("/api/data",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 
-dotenv.config();
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err)); 
 
-//port listening
 app.listen(port,()=>{
-    console.log(`successfully running in the port http://localhost:${4000}`)
+    console.log(`successfully running on port ${port}`)
 })
