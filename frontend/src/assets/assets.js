@@ -66,10 +66,10 @@ export const food_list = Array.from({ length: 32 }, (_, i) => {
     const id = i + 1;
     return {
         _id: `${id}`,
-        name: `Food ${id}`, 
-        image: `${backendUrl}/images/food_${id}.png`,
+        name: `Food ${id}`,
+        image: `food_${id}.png`,  
         price: 10 + i,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "" // You can fill categories later or leave blank
+        category: ""
     };
 });
