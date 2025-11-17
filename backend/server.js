@@ -3,7 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import path from "path";  
-import { fileURLToPath } from "url"; // ⭐ Needed for ES modules
+import { fileURLToPath } from "url"; 
 
 dotenv.config();
 
